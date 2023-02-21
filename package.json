@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "mongoose": "^6.9.2"
+  },
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "This is my first API where im gonna create with js, express and mongoose",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Javascript",
+    "API",
+    "REST",
+    "express",
+    "mongoose"
+  ],
+  "author": "Juan Niño",
+  "license": "MIT"
+}
