@@ -26,8 +26,6 @@ router.post('/', function (req,res){
 });
 
 router.put('/:id', function (req,res) {
-  console.log(req.params.id);
-
   controller.updateMessage(req.params.id, req.body.message)
     .then((data) => {
       response.success(req, res, data, 200);
@@ -38,12 +36,17 @@ router.put('/:id', function (req,res) {
 });
 
 router.delete('/:id', function (req,res) {
-  controller.deleteMessage(req.params.id)
-    .then(() => {
-      response.success(req, res, `Usuario: ${req.params.id} eliminado`, 200)})
+  let id = req.params.id
+  controller.deleteMessage(id)
+    .then((deletedMessage) => {
+      if(deletedMessage !== null){
+        response.success(req, res, `Usuario ${req.params.id} eliminado correctamente`, 200)
+      }else{
+        response.error(req, res, `El mensaje del usuario ${id} ya fué eliminado o no existe`)
+      }})
     .catch(e => {
       response.error(req, res, 'Error interno', 500, e);
-    })
+    });
 });
 
 

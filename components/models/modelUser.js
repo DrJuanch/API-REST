@@ -4,11 +4,7 @@ const Schema = mongoose.Schema;
 
 const mySchema = new Schema(
   {
-    user: String,
-    message: {
-      type: String,
-      require: true
-    },
+    name: String,
     date: Date
   },
   {
@@ -16,5 +12,5 @@ const mySchema = new Schema(
   }
 );
 
-const model = mongoose.model('Message', mySchema);
+const model = mongoose.model('User', mySchema);
 module.exports = model;
