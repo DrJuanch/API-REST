@@ -8,6 +8,7 @@ const router = require('./network/routes');
 
 const app = express();
 const port = 3030;
+
 // We use it to parser the response's body in different types of information (JSON, urlencoded...ETC)
 app.use(bodyParser.json());
 app.use(bodyParser.json(urlencoded({extended: false})));

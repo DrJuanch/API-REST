@@ -5,9 +5,8 @@ const store = require('./store');
 function addMessage(user, message){
   return new Promise((resolve, reject) => {
     if (!user || !message){
-      console.error('[messageController] No hay usuario o mensaje');
-      reject('Datos incompletos');
-    }
+      reject('Datos invalidos');
+    };
 
     const fullMessage = {
       user: user,
@@ -24,21 +23,36 @@ function getMessages(filterUser){
   return new Promise ((resolve) => {
     resolve(store.list(filterUser));
   });
-}
+};
 
 function updateMessage(id, message){
   return new Promise(async (resolve, reject) => {
     if(!id || !message){
-      reject('Invalid data')
+      reject('Invalid data');
     };
     const result = await store.updateText(id, message);
     resolve(result);
   });
-}
+};
 
+function deleteMessage(id) {
+  return new Promise ((resolve, reject) => {
+    if (!id){
+      reject ('Id invalido');
+    };
+    store.remove(id)
+      .then(() => {
+        resolve();
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+};
 
 module.exports = {
   addMessage,
   getMessages,
-  updateMessage
+  updateMessage,
+  deleteMessage
 };
