@@ -6,7 +6,7 @@ const db = require('./db');
 const router = require('./network/routes');
 
 // This is my server I created with express
-db('https://api-rest-drjuanch.onrender.com')
+db('mongodb+srv://administrador:administrador1342**@messages.7rqujqp.mongodb.net/?retryWrites=true&w=majority');
 const app = express();
 const port = 3030;
 
