@@ -7,27 +7,37 @@ This is a chatting API REST where i did complete CRUD with good practices, envir
 If you want to copy this repo and run it on your computer you have to install the next packages from NPM:
 
 -Node.js
+
 -Express
+
 -Mongoose
+
 -Nodemon
+
 -Eslintrc
+
 -Dotenv
 
 This is my STACK used to build this API Rest.
 
 ⚡INSTALL
 --
-To start a project with node:
--npm init
+To start a project with node: 
+npm init
+
 Install mongoose:
--npm i mongoose --save -D
+npm i mongoose --save -D
+
 Install express:
--npm i express --save -D
+npm i express --save -D
+
 Install nodemon:
 npm install --save-dev nodemon
+
 Install eslintrc:
 npm install --save-dev eslint prettier eslint-config-prettier 
 eslint-plugin-prettier
+
 Install dotenv:
 npm i dotenv
 
